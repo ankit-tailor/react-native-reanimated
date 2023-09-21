@@ -22,7 +22,7 @@ void WorkletRuntimeDecorator::decorate(
 
   rt.global().setProperty(rt, "_LABEL", jsi::String::createFromAscii(rt, name));
 
-#ifdef DEBUG
+#ifndef NDEBUG
   auto evalWithSourceUrl = [](jsi::Runtime &rt,
                               const jsi::Value &thisValue,
                               const jsi::Value *args,

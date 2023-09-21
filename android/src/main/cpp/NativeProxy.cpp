@@ -498,7 +498,7 @@ void NativeProxy::setupLayoutAnimations() {
         return false;
       });
 
-#ifdef DEBUG
+#ifndef NDEBUG
   layoutAnimations_->cthis()->setCheckDuplicateSharedTag(
       [weakNativeReanimatedModule](int viewTag, int screenTag) {
         if (auto nativeReanimatedModule = weakNativeReanimatedModule.lock()) {
